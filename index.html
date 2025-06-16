@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -16,8 +15,28 @@
     }
     header {
       background: linear-gradient(to right, #000000, #1c1c1c);
-      padding: 1rem;
+      padding: 1rem 1rem 1rem 3.5rem;
       text-align: center;
+      position: relative;
+    }
+    .home-link {
+      position: absolute;
+      left: 1rem;
+      top: 1.2rem;
+      color: #ffd700;
+      background: #222;
+      padding: 0.35rem 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border: 1px solid #ffd700;
+      transition: 0.2s;
+      z-index: 10;
+    }
+    .home-link:hover {
+      background: #ffd700;
+      color: #000;
     }
     header h1 {
       font-size: 2rem;
@@ -31,46 +50,59 @@
     .grid {
       display: none;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
+      gap: 1.2rem;
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      transition: 0.2s;
     }
     .link {
       background: #1a1a1a;
       border: 1px solid #ffd700;
       border-radius: 10px;
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem 0.5rem;
       color: #ffd700;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.03rem;
       transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
     }
     .link:hover {
       background: #ffd700;
       color: #000;
+      box-shadow: 0 2px 16px rgba(255,215,0,0.18);
+      transform: translateY(-3px) scale(1.03);
     }
     footer {
       display: none;
       padding: 1rem;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       background: #111;
       color: #ccc;
+      letter-spacing: 0.05em;
     }
     #ageModal {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.95);
+      background: rgba(0, 0, 0, 0.96);
       color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      animation: fadein 0.5s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
     #ageModal h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.3rem;
       color: #ffd700;
     }
     #ageModal button {
@@ -80,17 +112,37 @@
       padding: 0.6rem 1.2rem;
       font-size: 1rem;
       border-radius: 8px;
-      margin: 0.5rem;
+      margin: 0.5rem 0.7rem;
       cursor: pointer;
       transition: 0.3s;
+      font-weight: bold;
     }
     #ageModal button:hover {
       background: #fff;
+      color: #000;
+    }
+    @media (max-width: 600px) {
+      .grid {
+        padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+        gap: 0.7rem;
+      }
+      .link {
+        padding: 0.8rem 0.2rem;
+        font-size: 0.98rem;
+      }
+      header {
+        padding: 1rem 0.5rem 1rem 2.5rem;
+      }
+      .home-link {
+        left: 0.5rem;
+        top: 1rem;
+        font-size: 0.98rem;
+        padding: 0.26rem 0.7rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <div id="ageModal">
     <h2>您是否年满18岁？</h2>
     <button onclick="enterSite()">是，我已满18岁</button>
@@ -98,28 +150,29 @@
   </div>
 
   <header>
+    <a href="https://www.taobi.com/" class="home-link">返回首页</a>
     <img src="logo.png" alt="18HOT.VIP Logo" class="logo" />
     <h1>18HOT.VIP 成人导航</h1>
     <p style="color:#aaa;">只为18岁以上用户打造的火辣导航</p>
   </header>
 
   <main class="grid" id="mainGrid">
-    <a href="https://www.xvideos.com" class="link" target="_blank">XVideos</a>
-    <a href="https://www.pornhub.com" class="link" target="_blank">Pornhub</a>
-    <a href="https://www.youporn.com" class="link" target="_blank">YouPorn</a>
-    <a href="https://www.redtube.com" class="link" target="_blank">RedTube</a>
-    <a href="https://www.javlibrary.com" class="link" target="_blank">JAVLibrary</a>
-    <a href="https://adult.contents.fc2.com" class="link" target="_blank">FC2 成人</a>
-    <a href="https://www.spankbang.com" class="link" target="_blank">SpankBang</a>
-    <a href="https://xhamster.com" class="link" target="_blank">XHamster</a>
-    <a href="https://hanime.tv" class="link" target="_blank">HAnime</a>
-    <a href="https://rule34.xxx" class="link" target="_blank">Rule34</a>
-    <a href="https://www.manyvids.com" class="link" target="_blank">ManyVids</a>
-    <a href="https://www.eporner.com" class="link" target="_blank">Eporner</a>
-    <a href="https://chaturbate.com" class="link" target="_blank">Chaturbate</a>
-    <a href="https://www.stripchat.com" class="link" target="_blank">Stripchat</a>
-    <a href="https://www.reddit.com/r/nsfw/" class="link" target="_blank">Reddit NSFW</a>
-    <a href="https://www.theporndude.com" class="link" target="_blank">ThePornDude</a>
+    <a href="https://www.xvideos.com" class="link" target="_blank" rel="noopener">XVideos</a>
+    <a href="https://www.pornhub.com" class="link" target="_blank" rel="noopener">Pornhub</a>
+    <a href="https://www.youporn.com" class="link" target="_blank" rel="noopener">YouPorn</a>
+    <a href="https://www.redtube.com" class="link" target="_blank" rel="noopener">RedTube</a>
+    <a href="https://www.javlibrary.com" class="link" target="_blank" rel="noopener">JAVLibrary</a>
+    <a href="https://adult.contents.fc2.com" class="link" target="_blank" rel="noopener">FC2 成人</a>
+    <a href="https://www.spankbang.com" class="link" target="_blank" rel="noopener">SpankBang</a>
+    <a href="https://xhamster.com" class="link" target="_blank" rel="noopener">XHamster</a>
+    <a href="https://hanime.tv" class="link" target="_blank" rel="noopener">HAnime</a>
+    <a href="https://rule34.xxx" class="link" target="_blank" rel="noopener">Rule34</a>
+    <a href="https://www.manyvids.com" class="link" target="_blank" rel="noopener">ManyVids</a>
+    <a href="https://www.eporner.com" class="link" target="_blank" rel="noopener">Eporner</a>
+    <a href="https://chaturbate.com" class="link" target="_blank" rel="noopener">Chaturbate</a>
+    <a href="https://www.stripchat.com" class="link" target="_blank" rel="noopener">Stripchat</a>
+    <a href="https://www.reddit.com/r/nsfw/" class="link" target="_blank" rel="noopener">Reddit NSFW</a>
+    <a href="https://www.theporndude.com" class="link" target="_blank" rel="noopener">ThePornDude</a>
   </main>
 
   <footer id="footer">
@@ -135,6 +188,5 @@
       document.body.style.overflow = 'auto';
     }
   </script>
-
 </body>
 </html>
